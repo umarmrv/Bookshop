@@ -7,6 +7,9 @@ class Category(models.Model):
     title = models.CharField(max_length=255)
     created_at = models.DateTimeField(default=timezone.now)
 
+    def __str__(self):
+        return self.title  # это функция магический метод который отображает имя категории
+
 
 class Books(models.Model):
     title = models.CharField(max_length=255)
@@ -16,3 +19,6 @@ class Books(models.Model):
     # foreinKey  это типа принимаем ключ  из другой таблици
     # on_delete=models.CASCADE это значил при удаление категории и книгам тоже конец
     created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.title

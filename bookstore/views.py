@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
+from . import models
 
 
 def index(request):
-    return HttpResponse("Hello from the bookshop !")
+    books = models.Books.objects.all()
+    return HttpResponse(''.join([str(book) + '<br>' for book in books]))
