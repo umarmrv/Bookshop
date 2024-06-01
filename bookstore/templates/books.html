@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead> 
+    <tbody>  
+          {% for books in books %}
+         <tr>
+                    <td>{{ books.category}}</td>
+                    <td>{{ books.title }}</td>
+                    <td>{{books.price}}</td>
+                    <td><button>Buy</button></td>
+                    <td></td>
+
+        </tr>
+          {% endfor  %}
+    </tbody>
+</table>
