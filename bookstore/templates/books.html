@@ -1,6 +1,9 @@
-<table>
+ {% extends "base.html" %}
+ {%block title %} book store {% endblock %}
+ {%block content %}
+<table class=" table mt-5 table-bordered table-hover ">
     <thead>
-        <tr>
+        <tr class="table-dark">
             <th>Category</th>
             <th>Title</th>
             <th>Price</th>
@@ -14,10 +17,11 @@
                     <td>{{ books.category}}</td>
                     <td>{{ books.title }}</td>
                     <td>{{books.price}}</td>
-                    <td><button>Buy</button></td>
-                    <td></td>
-
+                    <td><button type="button" class="btn btn-outline-success">Buy</button></td>
+                   
         </tr>
           {% endfor  %}
+         
     </tbody>
 </table>
+{% endblock %}
