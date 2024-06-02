@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import Http404
 from . import models
 
 
@@ -11,5 +11,13 @@ def index(request):
 
 
 def single_book(request, book_id):
-    books = models.Books.objects.get(pk=book_id)
-    return render(request, "single_book.html", {"books": books})
+    try:
+        books = models.Books.objects.get(pk=book_id)
+        return render(request, "single_book.html", {"books": books})
+    except models.Books.DoesNotExist:
+        raise Http404()
+
+
+def book_detail(request, book_id):
+    book = models.Books.objects.get(pk=book_id)
+    return render(request, 'single_book.html', {'book': book})
