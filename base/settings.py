@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookstore.apps.BookstoreConfig',
     'api.apps.ApiConfig',
+    'tastypie'
 ]
 
 MIDDLEWARE = [

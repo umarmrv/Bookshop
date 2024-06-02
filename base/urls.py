@@ -30,6 +30,6 @@ api.register(category_resourse)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bookstore/', include('bookstore.urls')),
+    path('', include('bookstore.urls')),
     path('api/', include(api.urls)),
 ]

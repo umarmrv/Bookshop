@@ -1,7 +1,7 @@
 from tastypie.resources import ModelResource
 from bookstore.models import Category, Books
-from tastypie.authorization import Authorization
 from .authentication import CustomAuthentication
+from tastypie.authorization import Authorization
 
 
 class CategoryResourse(ModelResource):
