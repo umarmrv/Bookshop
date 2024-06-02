@@ -1,5 +1,7 @@
 from tastypie.resources import ModelResource
 from bookstore.models import Category, Books
+from tastypie.authorization import Authorization
+from .authentication import CustomAuthentication
 
 
 class CategoryResourse(ModelResource):
@@ -14,3 +16,5 @@ class BookResourse (ModelResource):
         queryset = Books.objects.all()
         resourse_name = 'books'
         allowed_methods = ['get', 'post', 'delete']
+        authentication = CustomAuthentication()
+        authorization = Authorization()
