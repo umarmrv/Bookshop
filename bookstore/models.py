@@ -19,6 +19,7 @@ class Books(models.Model):
     # foreinKey  это типа принимаем ключ  из другой таблици
     # on_delete=models.CASCADE это значил при удаление категории и книгам тоже конец
     created_at = models.DateTimeField(default=timezone.now)
+    # image = models.ImageField(upload_to='book_images/', null=True, blank=True)
 
     def __str__(self):
         return self.title

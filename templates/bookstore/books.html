@@ -11,12 +11,12 @@
             <th></th>
         </tr>
     </thead> 
-    <tbody>  
-          {% for books in books %}
+     <tbody>  
+          {% for book in books %}
          <tr>
-                    <td>{{ books.category}}</td>
-                    <td>{{ books.title }}</td>
-                    <td>{{books.price}}</td>
+                    <td>{{ book.category}}</td>
+                    <td><a href={% url "bookstore:single_book" book.id %}>{{ book.title }}</a></td>
+                    <td>{{book.price}}</td>
                     <td><button type="button" class="btn btn-outline-success">Buy</button></td>
                    
         </tr>
