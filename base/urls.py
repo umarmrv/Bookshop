@@ -17,15 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from api.models import CategoryResourse, BookResourse
+from tastypie.api import Api
 
-# api/books
-# api/categories
+api = Api(api_name='v1')
+# api/v1/books
+# api/v2/categories
 book_resourse = BookResourse()
 category_resourse = CategoryResourse()
+api.register(book_resourse)
+api.register(category_resourse)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bookstore/', include('bookstore.urls')),
-    path('api/', include(book_resourse.urls)),
-    path('api/', include(category_resourse.urls))
+    path('api/', include(api.urls)),
 ]
