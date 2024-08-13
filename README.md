@@ -1,3 +1,3 @@
-Логин и пароль для админ части 
-Логин: shohjahon
-Пароль : 1234567
+ for  the admin part 
+login: shohjahon
+password: 1234567
